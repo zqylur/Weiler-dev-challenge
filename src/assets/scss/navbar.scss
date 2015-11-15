@@ -1,0 +1,17 @@
+.nav-button-group {
+  position: relative;
+  display: inline-block;
+  &:before {
+    content: attr(data-grouptype);
+    color: #999;
+    display: block;
+    font-size: 1rem;
+    padding: 0.7em;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    left: 83.5%;
+    top: 0.6rem;
+  }
+}
+
