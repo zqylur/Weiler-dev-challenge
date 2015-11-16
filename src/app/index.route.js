@@ -16,7 +16,7 @@
       })
       .state('contact', {
         url: '/contact',
-        templateUrl: 'app/components/contact/contact.html',
+        templateUrl: 'app/contact/contact.html',
         controller: 'ContactController',
         controllerAs: 'contact'
       });
