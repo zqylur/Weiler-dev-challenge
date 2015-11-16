@@ -1,5 +1,25 @@
 <div class="row">
-    <div class="large-12 large-text-center columns">
+    <!--previous challenges go here -->
+    <div class="previous-challenges">
+        <accordion close-others="oneAtATime">
+            <accordion-group is-open="isopen">
+                <accordion-heading>
+                    Previous runs ({{main.previousChallenges.length}}) <i class="right" ng-class="{'fa fa-chevron-down': isopen, 'fa fa-chevron-right': !isopen}"></i>
+                </accordion-heading>
+                <ul>
+                    <li ng-repeat="run in main.previousChallenges">
+                        <challenge challenge="run"></challenge>
+                    </li>
+                </ul>
+            </accordion-group>
+        </accordion>
+    </div>
+    <div class="current-challenge">
+        <challenge challenge="main.currentChallenge"></challenge>
+    </div>
+
+
+    <!-- <div class="large-12 large-text-center columns">
         <div class="panel">
             <h1>'Allo, 'Allo!</h1>
             <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
@@ -8,5 +28,5 @@
                 <a href="#" class="button success" ng-click="main.showToastr()">Splendid Toastr</a>
             </p>
         </div>
-    </div>
+    </div> -->
 </div>

@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="medium-4 column">
+        <label>Time Started:</label>
+        <span>{{challenge.challenge.timeStarted}}
+    </div>
+    <div class="medium-4 column">
+        <label>Time Completed:</label>
+        <span>{{challenge.challenge.timeCompleted}}
+    </div>
+    <div class="medium-4 column">
+        <label>Status:</label>
+        <span class="{{challenge.challenge.status}} challenge-status">{{challenge.challenge.statusMessage}}</span>
+    </div>
+</div>
+<div class="row features">
+    <div class="medium-1 column"></div>
+    <challenge-question ng-repeat="question in challenge.challenge.questions" question="question" number="$index + 1"></challenge-question>
+    <div class="medium-1 column"></div>
+</div>

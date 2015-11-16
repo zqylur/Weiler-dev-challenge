@@ -6,25 +6,72 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, toastr) {
-    var vm = this;
+  function MainController($timeout, moment) {
+    var co = this;
 
-    vm.awesomeThings = [];
-    vm.classAnimation = '';
-    vm.creationDate = 1447543233091;
-    vm.showToastr = showToastr;
+    co.previousChallenges = [{
+      timeStarted: moment().format('MMMM Do YYYY, h:mm:ss a'),
+      timecompleted: moment().add(3, 'm').format('MMMM Do YYYY, h:mm:ss a'),
+      status: 'success',
+      statusMessage: 'SUCCESS',
+      questions: [{
+        status: 'completed'
+      },
+      {
+        status: 'completed'
+      },
+      {
+        status: 'completed'
+      },
+      {
+        status: 'completed'
+      },
+      {
+        status: 'completed'
+      }]
+    },
+    {
+      timeStarted: moment().format('MMMM Do YYYY, h:mm:ss a'),
+      timecompleted: moment().add(3, 'm').format('MMMM Do YYYY, h:mm:ss a'),
+      status: 'failure',
+      statusMessage: 'FAILED',
+      questions: [{
+        status: 'completed'
+      },
+      {
+        status: 'completed'
+      },
+      {
+        status: 'completed'
+      },
+      {
+        status: 'completed'
+      },
+      {
+        status: 'completed'
+      }]
+    }]
 
-    activate();
-
-    function activate() {
-      $timeout(function() {
-        vm.classAnimation = 'rubberBand';
-      }, 4000);
-    }
-
-    function showToastr() {
-      toastr.info('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
-      vm.classAnimation = '';
+    co.currentChallenge = {
+      timeStarted: moment().format('MMMM Do YYYY, h:mm:ss a'),
+      timecompleted: moment().add(3, 'm').format('MMMM Do YYYY, h:mm:ss a'),
+      status: 'pending',
+      statusMessage: 'IN PROGRESS',
+      questions: [{
+        status: 'completed'
+      },
+      {
+        status: 'completed'
+      },
+      {
+        status: 'pending'
+      },
+      {
+        status: 'notstarted'
+      },
+      {
+        status: 'notstarted'
+      }]
     }
   }
 })();
